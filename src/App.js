@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Form from "./form/form";
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {useState} from "react";
+import Users from "./users/users";
+import LogInForm from "./form/logInForm";
+
+export default function App() {
+    let [currentUsers, setCurrentUsers] = useState([]);
+    let [authorized, setAuthorized] = useState([]);
+
+    return (
+            <div className={'mainBlock'}>
+                {authorized.userName}
+                <LogInForm authorized={setAuthorized}/>
+                <div className={'flex'}>
+                    <Users currentUser={currentUsers}/>
+                    <Form setCurrentUsers={setCurrentUsers}/>
+                </div>
+            </div>
+    )
 }
-
-export default App;

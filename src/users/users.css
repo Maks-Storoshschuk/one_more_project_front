@@ -1,0 +1,34 @@
+.users{
+    margin-left: 46px;
+    width: 1218px;
+    border: 1px solid #EBEDF3;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 30px #523F690D;
+    border-radius: 6px;
+    opacity: 1;
+}
+.usersHead{
+    display: flex;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    color: #A4A4B5;
+}
+.usersHead h2{
+    width: 246px;
+    margin-left: 26px;
+}
+.user{
+    display: flex;
+    background-color: #F4F5F8;
+    opacity: 2;
+    margin-bottom: 3px;
+    height: 56px;
+}
+.user>p{
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 13px;
+    color: #3F4254;
+    width: 246px;
+    margin: 22px 0 0 26px  ;
+}
