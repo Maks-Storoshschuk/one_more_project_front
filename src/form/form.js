@@ -43,13 +43,14 @@ export default function Form({setCurrentUsers}) {
             setClas('error')
         }
         if (password === e.target.value){
-            setClas('ok')
+            setClas('button')
         }
     }
     let [clas,setClas] = useState('ok')
+    let [hide,setHide] = useState('form')
 
     return (
-        <div className={'form'}>
+        <div className={hide}>
             <h2>Create new user</h2>
             <form onSubmit={onsubmitForm}>
                 <p>Username*</p>
@@ -67,7 +68,7 @@ export default function Form({setCurrentUsers}) {
                 <p>Repeat password*</p>
                 <input className={clas} type="text" name={'Password'} onInput={repeatPassword}/>
                 <div>
-                    <button>Create</button>
+                    <button className={clas} onClick={()=>setHide('hide')}>Create</button>
                 </div>
             </form>
         </div>

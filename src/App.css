@@ -1,8 +1,17 @@
 .mainBlock{
     width: 1920px;
+    margin: 0;
     background: #EEF0F8;
     opacity: 1;
 }
 .flex{
     display: flex;
 }
+body{
+    margin: 0;
+}
+
+#root > div > div.flex > div.hide{
+    display: none;
+}
+

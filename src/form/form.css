@@ -7,7 +7,7 @@
 .form input{
     width:532px ;
     height: 46px;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
     background-color: #F3F6F9;
     border-radius: 6px;
     border:  #F3F6F9;
@@ -23,4 +23,26 @@
     font-family: "Helvetica Neue", sans-serif;
     font-weight: bold;
     margin-bottom: 29px;
+}
+.form p {
+    margin:  0 0 3px 0;
+    font-size:13px ;
+}
+#root > div > div.flex > div.form > form > input.error{
+    border-radius:  6px;
+    border: 3px solid red;
+}
+#root > div > div.flex > div.form > form > div > button.ok{
+    display: none;
+}
+#root > div > div.flex > div.form > form > div > button.error{
+    display: none;
+}
+#root > div > div.flex > div.form > form > div > button{
+    margin-left: 206px;
+    width: 120px;
+    height: 46px;
+    color: #FFFFFF;
+    border-radius: 6px;
+    background-color: #2E8FF0;
 }
