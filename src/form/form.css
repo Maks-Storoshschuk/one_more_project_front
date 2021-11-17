@@ -1,22 +1,25 @@
-.form{
+.form {
     height: 711px;
     width: 584px;
     margin-left: 26px;
     background-color: #FFFFFF;
 }
-.form input{
-    width:532px ;
+
+.form input {
+    width: 532px;
     height: 46px;
     margin-bottom: 16px;
     background-color: #F3F6F9;
     border-radius: 6px;
-    border:  #F3F6F9;
+    border: #F3F6F9;
     opacity: 1;
 }
-.form form{
+
+.form form {
     margin-left: 26px;
 }
-.form h2{
+
+.form h2 {
     margin-left: 26px;
     font-size: 16px;
     margin-top: 31px;
@@ -24,25 +27,95 @@
     font-weight: bold;
     margin-bottom: 29px;
 }
+
 .form p {
-    margin:  0 0 3px 0;
-    font-size:13px ;
+    margin: 0 0 3px 0;
+    font-size: 13px;
 }
-#root > div > div.flex > div.form > form > input.error{
-    border-radius:  6px;
+
+#root > div > div.flex > div.form >div> form > input.error {
+    border-radius: 6px;
     border: 3px solid red;
 }
-#root > div > div.flex > div.form > form > div > button.ok{
+
+#root > div > div.flex > div.form >div> form > div > button.ok {
     display: none;
 }
-#root > div > div.flex > div.form > form > div > button.error{
+
+#root > div > div.flex > div.form >div> form > div > button.error {
     display: none;
 }
-#root > div > div.flex > div.form > form > div > button{
+
+#root > div > div.flex > div.form > div > form > div > button {
     margin-left: 206px;
     width: 120px;
     height: 46px;
     color: #FFFFFF;
     border-radius: 6px;
     background-color: #2E8FF0;
+}
+
+#updateForm {
+    position: absolute;
+    top: 185px;
+    left: 1293px;
+    height: 711px;
+    width: 584px;
+    background-color: #FFFFFF;
+}
+
+#updateForm input {
+    width: 532px;
+    height: 46px;
+    margin-bottom: 16px;
+    background-color: #F3F6F9;
+    border-radius: 6px;
+    border: #F3F6F9;
+    opacity: 1;
+}
+
+#updateForm h2 {
+    margin-left: 26px;
+    font-size: 16px;
+    margin-top: 31px;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: bold;
+    margin-bottom: 29px;
+}
+
+#updateForm p {
+    margin: 0 0 3px 0;
+    font-size: 13px;
+}
+
+#updateForm > form > div > button:nth-child(2), button:nth-child(1){
+    width: 120px;
+    height: 46px;
+    background-color: #2E8FF0;
+    box-shadow: 0 5px 8px #2E8FF029;
+    border-radius: 6px;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+#updateForm form {
+    margin-left: 26px;
+}
+
+#updateForm > form > div > button:nth-child(1) {
+    background-color: #F44682;
+    margin-right: 292px;
+}
+#root > div > div.flex > div.form > button{
+    position: absolute;
+    top: 211px;
+    left: 1827px;
+}
+#updateForm > button{
+    position: absolute;
+    top: 26px;
+    left: 534px;
+}
+#hide{
+    display: none;
 }

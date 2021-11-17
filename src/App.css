@@ -14,4 +14,19 @@ body{
 #root > div > div.flex > div.hide{
     display: none;
 }
+#navigate button{
+    width: 120px;
+    height: 46px;
+    background-color: #2E8FF0;
+    box-shadow: 0 5px 8px #2E8FF029;
+    border-radius: 6px;
+    color: #FFFFFF;
+    font-size: 14px;position: absolute;
+    left:1144px ;
+    top: 123px;
 
+}
+#navigate{
+    width: 100%;
+    height: 185px;
+}

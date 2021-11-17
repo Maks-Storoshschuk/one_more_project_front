@@ -22,15 +22,6 @@ export default function Users({currentUser}) {
             })
     }
 
-    let delUser = (id) => {
-        deleteUser(id).then(value => {
-                if (value) console.log('Видалено!')
-            }
-        );
-        let filterUser = users.filter(value => value.id !== id);
-        setUsers([...filterUser])
-    }
-
     return (
         <div className={'users'}>
             <div className={'usersHead'}>
@@ -41,7 +32,7 @@ export default function Users({currentUser}) {
                 <h2>TYPE</h2>
             </div>
             {
-                users.map(value => <User item={value} key={value.id} delUser={delUser} refreshUser={refreshUser}/>)
+                users.map(value => <User item={value} key={value.id} refreshUser={refreshUser}/>)
             }
 
         </div>

@@ -39,15 +39,19 @@ export default function Form({setCurrentUsers}) {
         setPassword(e.target.value)
     }
     const repeatPassword = (e) => {
-        if (password !== e.target.value){
+        if (password !== e.target.value) {
             setClas('error')
         }
-        if (password === e.target.value){
+        if (password === e.target.value) {
             setClas('button')
         }
     }
-    let [clas,setClas] = useState('ok')
-    let [hide,setHide] = useState('form')
+    let [clas, setClas] = useState('ok')
+    let [hide, setHide] = useState('')
+
+    if (!userName || !firstName || !lastName || !email || !type || !password) {
+        console.log('error')
+    }
 
     return (
         <div className={hide}>
@@ -62,13 +66,13 @@ export default function Form({setCurrentUsers}) {
                 <p>Email*</p>
                 <input type="text" name={'Email'} onInput={changeEmail}/>
                 <p>Type*</p>
-                <input type="text" name={'Type'}  onInput={changeType}/>
+                <input type="text" name={'Type'} onInput={changeType}/>
                 <p>Password*</p>
                 <input type="text" name={'Password'} onInput={changePassword}/>
                 <p>Repeat password*</p>
                 <input className={clas} type="text" name={'Password'} onInput={repeatPassword}/>
                 <div>
-                    <button className={clas} onClick={()=>setHide('hide')}>Create</button>
+                    <button className={clas} onClick={() => setHide('hide')}>Create</button>
                 </div>
             </form>
         </div>
