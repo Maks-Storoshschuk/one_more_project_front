@@ -1,32 +1,69 @@
-.mainBlock{
+.mainBlock {
     width: 1920px;
     margin: 0;
     background: #EEF0F8;
     opacity: 1;
+    padding-bottom: 100px;
 }
-.flex{
+
+.flex {
     display: flex;
 }
-body{
+
+body {
     margin: 0;
 }
 
-#root > div > div.flex > div.hide{
+#root > div > div.flex > div.hide {
     display: none;
 }
-#navigate button{
+
+#navigate button {
     width: 120px;
     height: 46px;
     background-color: #2E8FF0;
     box-shadow: 0 5px 8px #2E8FF029;
     border-radius: 6px;
     color: #FFFFFF;
-    font-size: 14px;position: absolute;
-    left:1144px ;
+    font-size: 14px;
+    position: absolute;
+    left: 1144px;
     top: 123px;
 
 }
-#navigate{
+
+#navigate {
     width: 100%;
     height: 185px;
+}
+
+#okay {
+    position: absolute;
+    left: 1593px;
+    top: 56px;
+    background: #66BB6A;
+    box-shadow: 0 10px 15px #4CAF505C;
+    border-radius: 6px;
+    color: #FFFFFF;
+    font-size: 20px;
+    padding: 15px;
+}
+
+#error {
+    position: absolute;
+    left: 46px;
+    top: 56px;
+    background: #EF7DA0;
+    box-shadow: 0 10px 15px #EF7DA05C;
+    border-radius: 6px;
+    color: #FFFFFF;
+    font-size: 20px;
+    padding: 15px;
+}
+
+#user {
+    position: absolute;
+    left: 600px;
+    top: 36px;
+    font-size: 40px;
 }

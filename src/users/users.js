@@ -1,23 +1,35 @@
 import {useEffect, useState} from "react";
-import {deleteUser, getUsers, updateUser} from "../user.services/user.services";
+import {getUsers, updateUser} from "../user.services/user.services";
 import User from "./user";
 import './users.css'
 
 
-export default function Users({currentUser}) {
+export default function Users({currentUser, setStatus, authorized}) {
     let [users, setUsers] = useState([])
 
+    let token = localStorage.getItem('access_token')
+
     useEffect(() => {
-        getUsers().then(value => {
-            setUsers([...value])
-        })
-    }, [currentUser]);
+
+        if (token) {
+            getUsers().then(value =>
+                setUsers([...value])
+            )
+        }
+    }, [currentUser, authorized]);
+
 
     let refreshUser = (item) => {
         updateUser(item)
             .then(value => {
+                setStatus(value)
+                let {_id} = value
+                if (_id) {
+                    setStatus(202)
+                }
                 getUsers().then(value => {
-                    setUsers([...value])
+                    setUsers([...value]);
+
                 })
             })
     }
@@ -32,7 +44,7 @@ export default function Users({currentUser}) {
                 <h2>TYPE</h2>
             </div>
             {
-                users.map(value => <User item={value} key={value.id} refreshUser={refreshUser}/>)
+                users.map(value => <User item={value} key={value.id} refreshUser={refreshUser} setStatus={setStatus}/>)
             }
 
         </div>

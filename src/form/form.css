@@ -33,16 +33,16 @@
     font-size: 13px;
 }
 
-#root > div > div.flex > div.form >div> form > input.error {
+#root > div > div.flex > div.form > div > form > input.error {
     border-radius: 6px;
     border: 3px solid red;
 }
 
-#root > div > div.flex > div.form >div> form > div > button.ok {
+#root > div > div.flex > div.form > div > form > div > button.ok {
     display: none;
 }
 
-#root > div > div.flex > div.form >div> form > div > button.error {
+#root > div > div.flex > div.form > div > form > div > button.error {
     display: none;
 }
 
@@ -88,7 +88,7 @@
     font-size: 13px;
 }
 
-#updateForm > form > div > button:nth-child(2), button:nth-child(1){
+#updateForm > form > div > button:nth-child(2), button:nth-child(1) {
     width: 120px;
     height: 46px;
     background-color: #2E8FF0;
@@ -106,16 +106,66 @@
     background-color: #F44682;
     margin-right: 292px;
 }
-#root > div > div.flex > div.form > button{
+
+#root > div > div.flex > div.form > button {
     position: absolute;
     top: 211px;
     left: 1827px;
 }
-#updateForm > button{
+
+#updateForm > button {
     position: absolute;
     top: 26px;
     left: 534px;
 }
-#hide{
+
+#hide {
     display: none;
 }
+
+#show > div:nth-child(1) > input[type=text]:nth-child(1) {
+    position: absolute;
+    left: 1100px;
+    top: 50px;
+    width: 200px;
+    height: 46px;
+    margin-bottom: 16px;
+    background-color: #F3F6F9;
+    border-radius: 6px;
+    border: #F3F6F9;
+    opacity: 1;
+}
+
+#show > div:nth-child(1) > input[type=text]:nth-child(2) {
+    position: absolute;
+    left: 1400px;
+    top: 50px;
+    width: 200px;
+    height: 46px;
+    margin-bottom: 16px;
+    background-color: #F3F6F9;
+    border-radius: 6px;
+    border: #F3F6F9;
+    opacity: 1;
+}
+
+#show > div:nth-child(2) > button {
+    position: absolute;
+    left: 1700px;
+    top: 50px
+}
+
+#show.baton {
+    position: absolute;
+    left: 1700px;
+    top: 50px;
+    width: 120px;
+    height: 46px;
+    background-color: #2E8FF0;
+    box-shadow: 0 5px 8px #2E8FF029;
+    border-radius: 6px;
+    color: #FFFFFF;
+    font-size: 14px;
+
+}
+
