@@ -12,6 +12,7 @@ export default function LogInForm({setAuthorized}) {
                 if (value.access_token) {
                     localStorage.setItem('access_token', value.access_token)
                     localStorage.setItem('refresh_token', value.refresh_token)
+                    localStorage.setItem('id',value._id)
                     setAuthorized(value)
                 }
             })
