@@ -28,7 +28,8 @@ export default function LogInForm({setAuthorized}) {
             localStorage.clear()
             setAuthorized({userName: "guest"})
         })
-        e.preventDefault()
+        // eslint-disable-next-line no-implied-eval
+        setTimeout("location.reload();",2000)
     }
 
     const changeEmail = (e) => {

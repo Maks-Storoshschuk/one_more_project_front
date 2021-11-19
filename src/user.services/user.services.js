@@ -93,6 +93,7 @@ function refreshToken() {
                     if (response.access_token) {
                         localStorage.setItem('access_token', response.access_token)
                         localStorage.setItem('refresh_token', response.refresh_token)
+                        refreshToken()
                     }
                 })
         }
