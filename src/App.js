@@ -9,7 +9,10 @@ import {refreshToken} from "./user.services/user.services";
 
 export default function App() {
     let [currentUsers, setCurrentUsers] = useState([]);
-    let [authorized, setAuthorized] = useState('');
+    let [authorized, setAuthorized] = useState({userName:localStorage.getItem('name')});
+    if(!localStorage.getItem('name')){
+        authorized= ({userName:'створи юзера і увійди в систему'})
+    }
     let [hide, setHide] = useState('form');
     let [status, setStatus] = useState('');
 

@@ -9,9 +9,9 @@ export default function EditForm({item, refreshUser, setStatus}) {
     let [lastName, setLastName] = useState(item.lastName)
     let [type, setType] = useState(item.type)
     let [password, setPassword] = useState()
-    let onsubmitForm = (e) => {
-        e.preventDefault()
-    }
+    // let onsubmitForm = (e) => {
+    //     e.preventDefault()
+    // }
 
     const changeUserName = (e) => {
         setUserName(e.target.value)
@@ -41,7 +41,6 @@ export default function EditForm({item, refreshUser, setStatus}) {
         refreshUser({userName, firstName, lastName, type, password, id: item.id})
     }
 
-
     let oneClickDeleteUser = () => {
         deleteUser(item.id).then(value => {
             setStatus({message: 'Deleted'});
@@ -64,7 +63,7 @@ export default function EditForm({item, refreshUser, setStatus}) {
     return (
         <div id={hide}>
             <h2>{item.firstName} {item.lastName}</h2>
-            <form onSubmit={onsubmitForm}>
+            <form>
                 <p>Username*</p>
                 <input type="text" name={'Username'} defaultValue={item.userName} onInput={changeUserName}/>
                 <p>First name*</p>

@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {logIn, logOut} from "../user.services/user.services";
 
-export default function LogInForm({setAuthorized,setStatus}) {
+export default function LogInForm({setAuthorized, setStatus}) {
     let [email, setEmail] = useState([])
     let [password, setPassword] = useState([])
 
@@ -12,7 +12,8 @@ export default function LogInForm({setAuthorized,setStatus}) {
                 if (value.access_token) {
                     localStorage.setItem('access_token', value.access_token)
                     localStorage.setItem('refresh_token', value.refresh_token)
-                    localStorage.setItem('id',value._id)
+                    localStorage.setItem('id', value._id)
+                    localStorage.setItem('name', value.userName)
                     setAuthorized(value)
                 }
                 setStatus(value)
@@ -20,20 +21,16 @@ export default function LogInForm({setAuthorized,setStatus}) {
                 console.log(value)
             })
         e.preventDefault()
-        setShow('hide')
-        setHide('show');
     }
 
     let logOutLocal = (e) => {
-        logOut().then(r => {
-            setHide('hide');
-            setShow('show')
-        }).then(value => {
-            localStorage.clear()
-            setAuthorized({userName: "guest"})
-        })
+        logOut()
+            .then(value => {
+                localStorage.clear()
+                setAuthorized({userName: "guest"})
+            })
         // eslint-disable-next-line no-implied-eval
-        setTimeout("location.reload();",2000)
+        setTimeout("location.reload();", 500)
     }
 
     const changeEmail = (e) => {
@@ -43,8 +40,12 @@ export default function LogInForm({setAuthorized,setStatus}) {
         setPassword(e.target.value)
     }
 
-    let [hide, setHide] = useState('hide')
-    let [show, setShow] = useState('show')
+    let hide = 'hide'
+    let show = 'show'
+    if (localStorage.getItem('name')) {
+        show = 'hide'
+        hide = 'show'
+    }
 
     return (
         <div>

@@ -70,7 +70,10 @@ export default function Status(code) {
             setMoving('okay')
         }
 
+        setTimeout(function (){setMoving('hide')},5000)
+
     }, [status]);
+
     return (
         <div>
             <div id={moving}>
