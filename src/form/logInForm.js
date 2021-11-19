@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {logIn, logOut} from "../user.services/user.services";
 
-export default function LogInForm({setAuthorized}) {
+export default function LogInForm({setAuthorized,setStatus}) {
     let [email, setEmail] = useState([])
     let [password, setPassword] = useState([])
 
@@ -15,6 +15,9 @@ export default function LogInForm({setAuthorized}) {
                     localStorage.setItem('id',value._id)
                     setAuthorized(value)
                 }
+                setStatus(value)
+
+                console.log(value)
             })
         e.preventDefault()
         setShow('hide')

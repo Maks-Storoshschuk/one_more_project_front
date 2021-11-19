@@ -44,11 +44,20 @@ export default function EditForm({item, refreshUser, setStatus}) {
 
     let oneClickDeleteUser = () => {
         deleteUser(item.id).then(value => {
-                setStatus({message: 'Deleted'});
+            setStatus({message: 'Deleted'});
+
+            if (item.id === localStorage.getItem('id')) {
+                localStorage.clear();
+                // eslint-disable-next-line no-implied-eval
+                setTimeout("location.reload()", 1)
+            }
+
+            if (item.id !== localStorage.getItem('id')) {
                 getUsers().then(value => {
                     refreshUser(...value);
                 })
             }
+        }
         );
     }
     let [hide, setHide] = useState('updateForm')

@@ -34,7 +34,7 @@ export default function App() {
                     </button>
                 </div>
             </div>
-            <LogInForm setAuthorized={setAuthorized}/>
+            <LogInForm setAuthorized={setAuthorized} setStatus={setStatus}/>
             <h2 id={'user'}>{authorized.userName}</h2>
         </div>
     )
