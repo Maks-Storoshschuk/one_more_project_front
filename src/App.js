@@ -5,12 +5,13 @@ import {useState} from "react";
 import Users from "./users/users";
 import Status from "./status/status";
 import LogInForm from "./form/logInForm";
+import {refreshToken} from "./user.services/user.services";
 
 export default function App() {
     let [currentUsers, setCurrentUsers] = useState([]);
     let [authorized, setAuthorized] = useState('');
-    let [hide, setHide] = useState('form')
-    let [status, setStatus] = useState('')
+    let [hide, setHide] = useState('form');
+    let [status, setStatus] = useState('');
 
     return (
         <div className={'mainBlock'}>
@@ -38,3 +39,5 @@ export default function App() {
         </div>
     )
 }
+
+refreshToken();

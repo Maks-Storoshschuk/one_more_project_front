@@ -17,7 +17,7 @@ function getUsers() {
     return (
         fetch(`http://${api}/users`, {
             headers: {
-                Authorization: localStorage.getItem('access_token')
+                Authorization: localStorage.getItem('access_token').toString()
             },
         })
             .then(value => value.json())
@@ -78,14 +78,25 @@ function logOut() {
 }
 
 function refreshToken() {
-    return (
-        fetch(`http://${api}/auth/refresh`, {
-            method: 'POST',
-            headers: {
-                Authorization: localStorage.getItem('refresh_token')
-            }
-        })
-    )
+    setTimeout(()=>{
+        if (localStorage.getItem('refresh_token')){
+            console.log(localStorage.getItem('refresh_token'))
+            fetch(`http://${api}/auth/refresh/`, {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                    Authorization: localStorage.getItem('refresh_token')
+                }
+            })
+                .then(value => value.json())
+                .then(response => {
+                    if (response.access_token) {
+                        localStorage.setItem('access_token', response.access_token)
+                        localStorage.setItem('refresh_token', response.refresh_token)
+                    }
+                })
+        }
+    },1000*60*15)
 }
 
 export {createUser, updateUser, deleteUser, getUsers, logIn, logOut, refreshToken}
